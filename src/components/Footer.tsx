@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <div className="flex items-center gap-4">
-            <img src={logo} alt="أبعاد الارتقاء" className="h-14 md:h-16 w-auto" />
+            <img src={logo} alt="أبعاد الارتقاء" className="h-14 md:h-16 w-auto mix-blend-lighten" />
             <div>
               <p className="font-bold text-foreground">أبعاد الارتقاء</p>
               <p className="text-xs text-muted-foreground">للاستشارات الهندسية</p>
