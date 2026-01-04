@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,7 +34,7 @@ const Header = () => {
           <img 
             src={logo} 
             alt="أبعاد الارتقاء" 
-            className="h-16 md:h-20 w-auto mix-blend-lighten"
+            className="h-16 md:h-20 w-auto"
           />
         </a>
 
