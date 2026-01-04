@@ -36,6 +36,10 @@ const Header = () => {
             alt="أبعاد الارتقاء" 
             className="h-16 md:h-20 w-auto"
           />
+          <div className="hidden sm:flex flex-col leading-tight">
+            <span className="text-foreground font-bold text-sm md:text-base tracking-wide">ABAAD AL-ERTEQAA</span>
+            <span className="text-foreground/80 text-xs md:text-sm tracking-wider">ENGINEERING CONSULTATION</span>
+          </div>
         </a>
 
         {/* Desktop Navigation */}
