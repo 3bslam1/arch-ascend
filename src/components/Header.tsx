@@ -34,7 +34,7 @@ const Header = () => {
           <img 
             src={logo} 
             alt="أبعاد الارتقاء" 
-            className="h-12 w-auto"
+            className="h-16 md:h-20 w-auto"
           />
         </a>
 
