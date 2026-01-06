@@ -6,10 +6,10 @@ const StatsSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const stats = [
-    { value: 40, suffix: "+", label: "خبير ومهندس", labelEn: "Experts & Engineers" },
-    { value: 50, suffix: "+", label: "مشروع حكومي وخاص", labelEn: "Projects Delivered" },
-    { value: 15, suffix: "+", label: "عاماً من الخبرة", labelEn: "Years Experience" },
-    { value: 100, suffix: "%", label: "التزام بالجودة", labelEn: "Quality Commitment" },
+    { value: 40, suffix: "+", label: "خبير ومهندس" },
+    { value: 50, suffix: "+", label: "مشروع حكومي وخاص" },
+    { value: 15, suffix: "+", label: "عاماً من الخبرة" },
+    { value: 100, suffix: "%", label: "التزام بالجودة" },
   ];
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const StatsSection = () => {
       <div className="absolute inset-0">
         <img
           src={statsBg}
-          alt="Construction site background"
+          alt="خلفية موقع البناء"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background" />
@@ -53,8 +53,7 @@ const StatsSection = () => {
                 {isVisible && <CountUp end={stat.value} duration={2000} />}
                 {stat.suffix}
               </div>
-              <div className="text-foreground font-medium mb-1">{stat.label}</div>
-              <div className="text-muted-foreground text-xs">{stat.labelEn}</div>
+              <div className="text-foreground font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
