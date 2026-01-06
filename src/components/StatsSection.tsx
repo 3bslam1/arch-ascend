@@ -1,14 +1,15 @@
 import { useEffect, useState, useRef } from "react";
+import statsBg from "@/assets/stats-bg.jpg";
 
 const StatsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const stats = [
-    { value: 40, suffix: "+", label: "خبير ومهندس" },
-    { value: 50, suffix: "+", label: "مشروع حكومي وخاص" },
-    { value: 15, suffix: "+", label: "عاماً من الخبرة" },
-    { value: 100, suffix: "%", label: "التزام بالجودة" },
+    { value: 40, suffix: "+", label: "خبير ومهندس", labelEn: "Experts & Engineers" },
+    { value: 50, suffix: "+", label: "مشروع حكومي وخاص", labelEn: "Projects Delivered" },
+    { value: 15, suffix: "+", label: "عاماً من الخبرة", labelEn: "Years Experience" },
+    { value: 100, suffix: "%", label: "التزام بالجودة", labelEn: "Quality Commitment" },
   ];
 
   useEffect(() => {
@@ -29,27 +30,31 @@ const StatsSection = () => {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="py-16 bg-gradient-to-r from-primary/10 via-background to-primary/10 border-y border-primary/20"
-    >
-      <div className="container mx-auto px-6">
+    <section ref={sectionRef} className="relative py-20 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src={statsBg}
+          alt="Construction site background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className="text-center"
+              className="text-center p-6 rounded-xl bg-card/30 backdrop-blur-sm border border-border/20"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient mb-2">
-                {isVisible && (
-                  <CountUp end={stat.value} duration={2000} />
-                )}
+                {isVisible && <CountUp end={stat.value} duration={2000} />}
                 {stat.suffix}
               </div>
-              <div className="text-muted-foreground text-sm md:text-base">
-                {stat.label}
-              </div>
+              <div className="text-foreground font-medium mb-1">{stat.label}</div>
+              <div className="text-muted-foreground text-xs">{stat.labelEn}</div>
             </div>
           ))}
         </div>
