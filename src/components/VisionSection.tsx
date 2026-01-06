@@ -7,17 +7,13 @@ const VisionSection = () => {
   const companies = [
     {
       name: "أبعاد الارتقاء",
-      nameEn: "Abaad Al-Erteqaa",
       description: "استشارات هندسية عالمية المستوى، تخطيط عمراني، وتصاميم سلامة معتمدة",
-      descriptionEn: "World-class engineering consultation, urban planning, and certified safety designs.",
       icon: Building2,
       image: abaadImage,
     },
     {
       name: "سما للسلامة",
-      nameEn: "Sama Safety",
       description: "رائدة في توريد وتركيب وصيانة أنظمة مكافحة الحرائق المتطورة",
-      descriptionEn: "Leader in supply, installation, and maintenance of cutting-edge firefighting systems.",
       icon: Flame,
       image: samaImage,
     },
@@ -38,7 +34,7 @@ const VisionSection = () => {
             {/* Section Header */}
             <div className="mb-10">
               <span className="text-primary text-sm font-semibold tracking-wider mb-4 block">
-                رؤيتنا | OUR VISION
+                رؤيتنا
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
                 شركتان.
@@ -55,18 +51,17 @@ const VisionSection = () => {
               {companies.map((company, index) => (
                 <div
                   key={company.name}
-                  className="group p-6 rounded-xl bg-card/50 border border-border/30 hover:border-primary/40 hover:bg-card transition-all duration-300"
+                  className="group p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-border/30 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
-                      <company.icon className="w-6 h-6 text-primary" />
+                  <div className="flex items-start gap-5">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:from-primary/30 group-hover:to-primary/10 transition-all duration-500">
+                      <company.icon className="w-7 h-7 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold mb-1 group-hover:text-primary transition-colors duration-300">
+                      <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">
                         {company.name}
                       </h3>
-                      <p className="text-sm text-muted-foreground/70 mb-2">{company.nameEn}</p>
                       <p className="text-muted-foreground text-sm leading-relaxed">
                         {company.description}
                       </p>
@@ -79,47 +74,63 @@ const VisionSection = () => {
             {/* CTA Button */}
             <Button
               size="lg"
-              className="group bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="group bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
             >
               تعرف على تحالفنا
               <ArrowLeft className="mr-2 w-4 h-4 transition-transform group-hover:-translate-x-1" />
             </Button>
           </div>
 
-          {/* Right Side - Images */}
+          {/* Right Side - Creative Image Layout */}
           <div className="order-1 lg:order-2 relative">
-            <div className="relative">
-              {/* Main Image */}
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative h-[500px] md:h-[600px]">
+              {/* Main Image - Abaad */}
+              <div className="absolute top-0 right-0 w-[75%] h-[65%] rounded-3xl overflow-hidden shadow-2xl shadow-primary/20 group">
                 <img
                   src={abaadImage}
-                  alt="Abaad Al-Erteqaa Engineering"
-                  className="w-full h-80 md:h-96 object-cover"
+                  alt="أبعاد الارتقاء"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-                <div className="absolute bottom-4 right-4 left-4">
-                  <p className="text-foreground font-semibold">أبعاد الارتقاء</p>
-                  <p className="text-muted-foreground text-sm">الاستشارات الهندسية</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+                <div className="absolute bottom-6 right-6 left-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/20 backdrop-blur-sm flex items-center justify-center">
+                      <Building2 className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-foreground font-bold">أبعاد الارتقاء</p>
+                      <p className="text-muted-foreground text-xs">الاستشارات الهندسية</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Secondary Image - Offset */}
-              <div className="absolute -bottom-8 -left-8 w-2/3 rounded-2xl overflow-hidden shadow-2xl border-4 border-background z-20">
+              {/* Secondary Image - Sama */}
+              <div className="absolute bottom-0 left-0 w-[70%] h-[55%] rounded-3xl overflow-hidden shadow-2xl shadow-primary/20 border-4 border-background group z-10">
                 <img
                   src={samaImage}
-                  alt="Sama Safety Systems"
-                  className="w-full h-56 md:h-64 object-cover"
+                  alt="سما للسلامة"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-                <div className="absolute bottom-4 right-4 left-4">
-                  <p className="text-foreground font-semibold">سما للسلامة</p>
-                  <p className="text-muted-foreground text-sm">أنظمة مكافحة الحرائق</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+                <div className="absolute bottom-6 right-6 left-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-destructive/20 backdrop-blur-sm flex items-center justify-center">
+                      <Flame className="w-5 h-5 text-destructive" />
+                    </div>
+                    <div>
+                      <p className="text-foreground font-bold">سما للسلامة</p>
+                      <p className="text-muted-foreground text-xs">أنظمة مكافحة الحرائق</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-primary/30 rounded-2xl" />
-              <div className="absolute top-1/2 -right-8 w-16 h-16 bg-primary/20 rounded-full blur-xl" />
+              <div className="absolute -top-4 -right-4 w-32 h-32 border-2 border-primary/20 rounded-3xl" />
+              <div className="absolute top-1/3 -right-8 w-4 h-24 bg-gradient-to-b from-primary/40 to-transparent rounded-full" />
+              <div className="absolute bottom-1/4 -left-6 w-20 h-20 bg-primary/10 rounded-full blur-2xl" />
+              <div className="absolute top-1/2 left-1/3 w-3 h-3 bg-primary rounded-full animate-pulse" />
             </div>
           </div>
         </div>
